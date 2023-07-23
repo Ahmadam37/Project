@@ -8,7 +8,7 @@ namespace StudentGradeEntrySystem
         static void Main(string[] args)
         {
             Student[] students = new Student[10];
-
+            
             string fullName;
             int sGrade;
             
@@ -29,21 +29,27 @@ namespace StudentGradeEntrySystem
 
             }
 
-            for(int x = 0; x < students.Length; x++) {
-
-                Console.WriteLine("Name: {0}, Grade: {1}" , students[x].Name, students[x].Grade);
-
-
-                if (students[x].Grade > 60)
+                foreach(var item in students)
                 {
-                    Console.WriteLine("Status: Failed");
-                }
-                else
+                if (item == null)
                 {
-                    Console.WriteLine("Status: Passed");
+                    break;
+                }
+                    Console.WriteLine("Name: {0}, Grade: {1}", item.Name, item.Grade);
+
+
+                    if (item.Grade > 60)
+                    {
+                        Console.WriteLine("Status: Failed");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Status: Passed");
+                    }
+
                 }
 
-            }
+            
 
         }
      
